@@ -127,7 +127,7 @@ try {
 const generateAccessToken = (data) => {
     try {
         const token = jwt.sign(data, process.env.ACCESS_TOKEN_PRIVATE_KEY , {
-        expiresIn: '1y',
+        expiresIn: '1d',
     });
   console.log(token);
   return token;

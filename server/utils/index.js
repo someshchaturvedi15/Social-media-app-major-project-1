@@ -1,9 +1,9 @@
 const express = require('express');
 const dotenv = require('dotenv');
-const dbConnect = require('./dbConnect');
-const authRouter = require('./routers/authRouter');
-const postsRouter = require('./routers/postsRouter');
-const userRouter = require('./routers/userRouter');
+const dbConnect = require('../dbConnect');
+const authRouter = require('../routers/authRouter');
+const postsRouter = require('../routers/postsRouter');
+const userRouter = require('../routers/userRouter');
 const morgan = require('morgan');
 const cookieParser = require('cookie-parser');
 const cors = require('cors')
@@ -22,12 +22,12 @@ cloudinary.config({
 const app = express();
 
 //middlewares morgan
-app.use(express.json({ limit: '100mb' }));
+app.use(express.json({ limit: '10mb' }));
 app.use(morgan('common'));
 app.use(cookieParser());
 let origin = 'http://localhost:3000';
 console.log('here env', process.env.NODE_ENV);
-if(process.env.NODE_ENV === 'production'){
+if(process.env.NODE_ENV === 'production') {
     origin = process.env.CLIENT_ORIGIN;
 }
 
