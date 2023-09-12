@@ -22,5 +22,8 @@
     "morgan": "^1.10.0",
     "time-ago": "^0.2.1",
     "v2": "^0.0.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
   }
 }
